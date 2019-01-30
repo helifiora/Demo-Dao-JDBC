@@ -7,6 +7,7 @@ import model.entities.Seller;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
 
@@ -43,5 +44,14 @@ public class Program {
         seller.setBaseSalary(20000.0);
         sellerDao.update(seller);
         System.out.println("Update compelted!");
+
+        System.out.println();
+        System.out.println("=== TEST 6: seller remove ===");
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter id for delete test: ");
+        int id = sc.nextInt();
+        sc.close();
+        sellerDao.deleteById(id);
+        System.out.println("Delete compelted!");
     }
 }
